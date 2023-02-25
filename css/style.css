@@ -1,0 +1,10 @@
+.counter_box{
+    text-align: center;
+}
+.counter_box span{
+    margin: 0 8px;
+    font-size: 20px;
+}
+.counter_box input{
+    font-size: 20px;
+}
