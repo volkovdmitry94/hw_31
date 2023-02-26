@@ -1,15 +1,14 @@
 class CounterAdvanced extends React.Component {
     constructor(props) {
         super(props);
-        this.numberInput = React.createRef();
         this.state = {
             counter: props.firstValue
         };
     }
-    changeHandler = () => {
+    changeHandler = (event) => {
         const oldState = this.state;
         const newState = {...oldState};
-        const newValue = this.numberInput.current.value;
+        const newValue = event.currentTarget.value;
         if (newValue < this.props.min || newValue > this.props.max) {
             alert (`Your value must be between ${this.props.min} and ${this.props.max}`);
         } else {
@@ -38,7 +37,7 @@ class CounterAdvanced extends React.Component {
                 <h1>Advanced Counter</h1>
                 <div>
                     <button onClick={this.clickHandlerDec}>-</button>
-                    <input onChange={this.changeHandler} type="number" ref={this.numberInput} value={this.state.counter}/>
+                    <input onChange={this.changeHandler} type="number" value={this.state.counter}/>
                     <button onClick={this.clickHandler}>+</button>
                 </div>
             </div>
